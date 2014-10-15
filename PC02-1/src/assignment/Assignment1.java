@@ -10,11 +10,12 @@ import java.util.Scanner;
 public class Assignment1 {
 
 	public static void main(String[] args) {
-		double[] rainfall = new double[12];
+		final int SIZE = 12;
+		double[] rainfall = new double[SIZE];
 		double sum = 0, avg = 0, highest = 0, lowest = 0;
 		Scanner input = new Scanner(System.in);
 		
-		for( int i = 0; i < 12; i++ ) {
+		for( int i = 0; i < SIZE; i++ ) {
 			System.out.printf("Enter amount for month %d: ", i + 1);
 			rainfall[i] = input.nextDouble();
 			
@@ -26,7 +27,7 @@ public class Assignment1 {
 		
 		input.close();
 		
-		for( int i = 0; i < 12; i++ ) {
+		for( int i = 0; i < SIZE; i++ ) {
 			sum += rainfall[i];
 			
 			if( rainfall[i] > highest )
@@ -36,7 +37,7 @@ public class Assignment1 {
 				lowest = rainfall[i];
 		}
 		
-		avg = sum / 12;
+		avg = sum / SIZE;
 		
 		System.out.printf("Total rainfall: %f%n"
 						+ "Average rainfall: %f%n"
