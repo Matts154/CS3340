@@ -22,8 +22,10 @@ public class PC0901 {
 		System.out.print("Enter worker's hire date: ");
 		hireDate = input.next();
 		
-		System.out.print("Enter worker's shift: ");
-		shift = input.nextInt();
+		do {
+			System.out.print("Enter worker's shift [1-2]: ");
+			shift = input.nextInt();
+		} while (shift < 1 || shift > 2);
 		
 		System.out.print("Enter worker's pay: $");
 		payRate = input.nextDouble();

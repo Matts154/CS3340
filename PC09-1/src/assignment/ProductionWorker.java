@@ -13,10 +13,10 @@ public class ProductionWorker extends Employee {
 	public ProductionWorker(String name, int number, String hireDate, int shift, double payRate) {
 		super(name, number, hireDate);
 		
-		if (shift > 0 && shift < 3)
-			this.shift = shift;
-		else
+		if (shift < 1 && shift > 2)
 			this.shift = 1;
+		else
+			this.shift = shift;
 		
 		if (payRate >= 9)
 			this.payRate = payRate;

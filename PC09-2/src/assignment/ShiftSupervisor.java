@@ -12,8 +12,15 @@ public class ShiftSupervisor extends Employee {
 	public ShiftSupervisor(String name, int number, String hireDate, double salary, double bonus) {
 		super(name, number, hireDate);
 		
-		this.salary = salary;
-		this.bonus = bonus;
+		if(salary < 0)
+			this.salary = 0;
+		else
+			this.salary = salary;
+		
+		if(bonus < 0)
+			this.bonus = 0;
+		else
+			this.bonus = bonus;
 	}
 
 	public double getSalary() {
