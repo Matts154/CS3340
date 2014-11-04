@@ -23,6 +23,6 @@ public class CargoShip extends Ship {
 	
 	@Override
 	public void print() {
-		System.out.printf("Name: %s%nMaximum Load: %s tonnes%n", this.getName(), maxCargo);
+		System.out.printf("CargoShip Name: %s%nMaximum Load: %s tonnes%n", this.getName(), maxCargo);
 	}
 }

@@ -23,7 +23,7 @@ public class CruiseShip extends Ship {
 	
 	@Override
 	public void print() {
-		System.out.printf("Name: %s%nMaximum Capacity: %s passenger(s)%n", this.getName(), maxPassengers);
+		System.out.printf("CruiseShip Name: %s%nMaximum Capacity: %s passenger(s)%n", this.getName(), maxPassengers);
 	}
 
 }

@@ -31,6 +31,6 @@ public class Ship {
 	}
 	
 	public void print() {
-		System.out.printf("%s (%s)%n", name, year);
+		System.out.printf("Ship Name: %s %nYear:%s%n", name, year);
 	}
 }
