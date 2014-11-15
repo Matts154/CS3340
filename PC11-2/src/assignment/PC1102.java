@@ -3,9 +3,14 @@ package assignment;
 public class PC1102 {
 
 	public static void main(String[] args) {
+		char[] c = {'a', 'b', 'c'};
+		
 		try {
-			Echo.echo("aA bB cC".toCharArray());
-			Echo.echo(null);
+			Echo.echo(c);
+			
+			c = null;
+			
+			Echo.echo(c);
 		} catch (MyNullPointerException e){
 			e.printStackTrace();
 		}
