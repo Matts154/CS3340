@@ -7,7 +7,7 @@ class PC1401 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		Pattern expression = Pattern.compile("b[a-zA-Z]*");
+		Pattern expression = Pattern.compile("b(\\w'?)+");
 		
 		System.out.print("Enter a string to tokenize: ");
 		
