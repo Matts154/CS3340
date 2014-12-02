@@ -17,30 +17,22 @@ public class PC1502 {
 		input.close();
 
 		if (Files.isDirectory(path)) {
-			DirectoryStream<Path> directories = null;
 			
-			System.out.printf("   %-35s %15s %-22s%n", "Filename", "Size", "Modified");
-			
-			try {
-				directories = Files.newDirectoryStream(path);
-			} catch (IOException e) {
-				System.out.printf("%nError: %s", e.getMessage() );
-			}
-			
-			for(Path p : directories){
-				
-				System.out.printf("%s%s %-35s ", 
-						(Files.isDirectory(p) ? "D" : "-"),
-						(p.isAbsolute() ? "A" : "-"),
-						p.toString());
-				try {
-					System.out.printf("%15d %-22s%n",
+			try (DirectoryStream<Path> directories = Files.newDirectoryStream(path)){
+				System.out.printf("   %-35s %15s %-22s%n", "Filename", "Size", "Modified");
+
+				for(Path p : directories){
+					System.out.printf("%s%s %-35s %15d %-22s%n", 
+							(Files.isDirectory(p) ? "D" : "-"),
+							(p.isAbsolute() ? "A" : "-"),
+							p.toString(),
 							Files.size(p),
 							Files.getLastModifiedTime(p));
-				} catch (IOException e) {
-					System.out.printf("%nError: %s", e.getMessage() );
 				}
 				
+				directories.close();
+			} catch (IOException e) {
+				System.out.printf("%nError: %s", e.getCause() );
 			}
 			
 		}

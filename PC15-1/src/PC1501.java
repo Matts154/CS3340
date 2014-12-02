@@ -34,7 +34,7 @@ public class PC1501 {
 			inputFile.close();
 		}
 		catch (Exception e) {
-			System.out.printf("Error: %s%n", e.getClass().getName());
+			System.out.printf("Error: %s%n", e.getCause());
 		}
 		finally {
 			input.close();
